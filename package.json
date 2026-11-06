@@ -1,0 +1,47 @@
+{
+  "name": "@local/dsh-migrator",
+  "version": "0.1.0",
+  "private": false,
+  "description": "DSH plugin migration helper: list installed plugins, export a paste-ready note or a self-contained zip kit",
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "plugin-manager",
+    "migration",
+    "backup"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fenshal/dsh-migrator.git"
+  },
+  "homepage": "https://github.com/fenshal/dsh-migrator#readme",
+  "bugs": {
+    "url": "https://github.com/fenshal/dsh-migrator/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  }
+}
